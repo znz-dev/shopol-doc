@@ -3,7 +3,7 @@
 ## 新建一个消息
 
 ```
-POST /user/message
+POST /message
 ```
 
 ## Parameters

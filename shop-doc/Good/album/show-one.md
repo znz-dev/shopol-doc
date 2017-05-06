@@ -3,7 +3,7 @@
 ## 显示一个商品图集
 
 ```
-GET /good/album/{goodId}
+GET /good/{goodId}/album
 ```
 
 ## Parameters
@@ -13,4 +13,4 @@ GET /good/album/{goodId}
 |goodId|int|Y|商品Id|
 
 ## Result
-|pictures|List(string)|Y|图片列表|
+|photos|List(string)|Y|图片列表|

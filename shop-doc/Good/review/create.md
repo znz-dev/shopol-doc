@@ -3,7 +3,7 @@
 ## 新建一个条评论
 
 ```
-POST /good/review
+POST /good/{goodId}/review
 ```
 
 ## Parameters

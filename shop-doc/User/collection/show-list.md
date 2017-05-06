@@ -3,7 +3,7 @@
 ## 显示用户收藏
 
 ```
-GET /user/collection/List
+GET /user/{userId}/collection/List
 ```
 
 ## Parameters
@@ -11,8 +11,8 @@ GET /user/collection/List
 |参数名|参数类型|是否必填|参数描述|
 |-----|--------|-------|--------|
 |userId|int|Y|用户Id|
-|pageIndex|int|Y|显示第几页|
-|pagePer|int|Y|每页显示数|
+|page|int|Y|显示第几页|
+|size|int|Y|每页显示数|
 
 ## Result-List
 |参数名|参数类型|是否可空|参数描述|
