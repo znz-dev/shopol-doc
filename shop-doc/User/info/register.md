@@ -3,7 +3,7 @@
 ## 新建一个用户
 
 ```
-POST /user
+POST /user/register
 ```
 
 ## Parameters

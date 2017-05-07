@@ -1,0 +1,51 @@
+@RequestMapping(value = "/{?Id}", method = RequestMethod.GET, produces = {"application/json; charset=UTF-8"})
+   @ResponseBody
+   public View<?> show(@PathVariable("?Id") int ?Id){
+       ? ? = ?Service.get?ById(?Id);
+       if (? == null) {
+           return new View<?>(false, "?不存在");
+       }
+       ? ? = new ?(?);
+       return new View<?>(userDetail);
+   }
+
+   /**
+    * 获取所有用户
+    * @param page
+    * @param size
+    * @return
+    */
+   @RequestMapping(value = "/userList", method = RequestMethod.GET, produces = {"application/json; charset=UTF-8"})
+   @ResponseBody
+   public View<UserList> index(@RequestParam(value = "page", defaultValue = "1") Integer page,
+                               @RequestParam(value = "size", defaultValue = "6") Integer size,
+                               @ModelAttribute User user) {
+       if (page <= 0) {
+           page = 1;
+       }
+       if (size <= 0) {
+           size = 6;
+       }
+       int offset = (page-1) * size;
+       UserList userList = userService.getUsersByParams(user, offset, size);
+       return new View<UserList>(userList);
+   }
+
+   /**
+    * 用户注册
+    * @param user
+    * @return
+    */
+   @RequestMapping(value = "/register", method = RequestMethod.POST, produces = {"application/json; charset=UTF-8"})
+   @ResponseBody
+   public View<UserDetail> register(@ModelAttribute User user) {
+
+       return userService.registerUserByParams(user);
+   }
+
+   @RequestMapping(value = "/{userId}", method = RequestMethod.PUT, produces = {"application/json; charset=UTF-8"})
+   @ResponseBody
+   public View<UserDetail> update(@PathVariable("userId") int userId, @ModelAttribute User user) {
+
+       return userService.updateUserByParams(userId, user);
+   }
