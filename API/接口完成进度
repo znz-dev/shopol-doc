@@ -1,0 +1,9 @@
+|序号|接口地址|请求类型|接口用途|完成情况|
+|-|-|-|-|-|
+|1|/good/{goodId}|Delete|删除指定商品|N|
+|2|/good/{goodId}|Put|更新指定商品|N|
+|3|/good/{goodId}/remark|Post|评论指定商品|N|
+|4|/good/{goodId}/remark|Get|获取指定商品评论|N|
+|5|/good/{goodId}/picture|Delete|删除指定商品的指定图片|N|
+|6|/good/{goodId}/custom|Put|修改指定商品的指定选项|N|
+|6|/good/{goodId}/custom|Delete|删除指定商品的指定选项|N|
